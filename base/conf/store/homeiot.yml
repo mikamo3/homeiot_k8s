@@ -1,0 +1,6 @@
+mqtt:
+  host: "tcp://localhost:1883"
+db:
+  host: "http://localhost:8086"
+  org: homeiot
+  bucket: homeiot

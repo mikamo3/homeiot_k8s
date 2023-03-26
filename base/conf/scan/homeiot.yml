@@ -1,0 +1,6 @@
+bluetooth:
+  serviceUUID: "4fafc201-1fb5-459e-8fcc-c5c9c331914b"
+  characteristicUUID: "beb5483e-36e1-4688-b7f5-ea07361b26a8"
+  inroomAddr: "0C:8B:95:A8:2A:1A"
+mqtt:
+  host: "tcp://localhost:1883"

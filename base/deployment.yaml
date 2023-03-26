@@ -1,0 +1,144 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: homeiot
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: homeiot
+  template:
+    metadata:
+      labels:
+        app: homeiot
+    spec:
+      hostNetwork: true
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+        fsGroup: 0
+        fsGroupChangePolicy: "Always"
+
+      containers:
+        - name: scan
+          image: localhost:5000/homeiot_scan:latest
+          securityContext:
+            privileged: true
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          volumeMounts:
+            - name: scan-conf
+              mountPath: /config
+
+        - name: store
+          image: localhost:5000/homeiot_store:latest
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          volumeMounts:
+            - name: store-conf
+              mountPath: /config
+        - name: node-red
+          image: nodered/node-red:3.0.2-18
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              memory: 256Mi
+              cpu: 200m
+          env:
+            - name: TZ
+              value: Asia/Tokyo
+          ports:
+            - name: nodered
+              containerPort: 1880
+              protocol: TCP
+          volumeMounts:
+            - name: nodered-data
+              mountPath: /data
+
+        - name: mosquitto
+          image: eclipse-mosquitto:2.0.15
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              cpu: 200m
+              memory: 1Gi
+          ports:
+            - name: mqtt
+              containerPort: 1883
+              protocol: TCP
+        - name: db
+          image: influxdb:1.8
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
+          volumeMounts:
+            - mountPath: /var/lib/influxdb
+              name: influxdb-data
+            - mountPath: /etc/influxdb
+              name: influxdb-conf
+          ports:
+            - name: db
+              containerPort: 8086
+              protocol: TCP
+        - name: grafana
+          image: grafana/grafana-oss:9.4.3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 10Mi
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
+          volumeMounts:
+            - name: grafana-data
+              mountPath: /var/lib/grafana
+          ports:
+            - name: grafana
+              containerPort: 3000
+              protocol: TCP
+      volumes:
+        - name: store-conf
+          configMap:
+            name: store-conf
+            items:
+              - key: homeiot.yml
+                path: homeiot.yml
+        - name: scan-conf
+          configMap:
+            name: scan-conf
+            items:
+              - key: homeiot.yml
+                path: homeiot.yml
+        - name: grafana-data
+          hostPath:
+            path: /var/k8sdata/data/grafana
+        - name: influxdb-data
+          hostPath:
+            path: /var/k8sdata/data/db
+        - name: nodered-data
+          hostPath:
+            path: /var/k8sdata/data/node-red
+        - name: influxdb-conf
+          configMap:
+            name: influxdb-conf
+            items:
+              - key: influxdb.conf
+                path: influxdb.conf
