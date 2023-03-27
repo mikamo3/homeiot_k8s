@@ -10,6 +10,9 @@ spec:
     - name: nodered
       port: 1880
       nodePort: 31880
+    - name: alexa-proxy
+      port: 3456
+      nodePort: 32456
     - name: grafana
       port: 3000
       nodePort: 32000

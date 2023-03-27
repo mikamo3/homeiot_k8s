@@ -14,3 +14,8 @@ configMapGenerator:
   - name: scan-conf
     files:
       - conf/scan/homeiot.yml
+
+secretGenerator:
+  - name: nodered-env
+    envs:
+      - conf/nodered/secret.env

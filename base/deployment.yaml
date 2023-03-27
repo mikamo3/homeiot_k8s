@@ -4,6 +4,8 @@ metadata:
   name: homeiot
 spec:
   replicas: 1
+  strategy:
+    type: Recreate
   selector:
     matchLabels:
       app: homeiot
@@ -49,6 +51,9 @@ spec:
               mountPath: /config
         - name: node-red
           image: nodered/node-red:3.0.2-18
+          envFrom:
+            - secretRef:
+                name: nodered-env
           resources:
             requests:
               cpu: 100m
@@ -62,6 +67,9 @@ spec:
           ports:
             - name: nodered
               containerPort: 1880
+              protocol: TCP
+            - name: alexa-proxy
+              containerPort: 3456
               protocol: TCP
           volumeMounts:
             - name: nodered-data

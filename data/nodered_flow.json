@@ -1,0 +1,3309 @@
+[
+  {
+    "id": "8e787ad.6aa1688",
+    "type": "tab",
+    "label": "センサ情報取得",
+    "disabled": false,
+    "info": "This flow shows BLE Read/Write example.\n\nTI's CC2650 user's guide is abailable at https://processors.wiki.ti.com/index.php/CC2650_SensorTag_User%27s_Guide#Use_of_buttons\n\nCC2650's base UUID is f0000000-0451-4000-b000-000000000000. Replace last 0000 in f0000000 with the sensor's UUID in order to find the 128-bit characteristic UUID."
+  },
+  {
+    "id": "cc053f9c7536a914",
+    "type": "tab",
+    "label": "状態保存",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "6869029d85cf6172",
+    "type": "tab",
+    "label": "機器操作",
+    "disabled": false,
+    "info": "",
+    "env": []
+  },
+  {
+    "id": "754fa54ad709f52c",
+    "type": "subflow",
+    "name": "SendcommandAPI",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 160,
+        "wires": [
+          {
+            "id": "a423c90673269577"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 620,
+        "y": 80,
+        "wires": [
+          {
+            "id": "7406f044f8f4cb49",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "4362af5847856d49",
+    "type": "subflow",
+    "name": "command TurnOn",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 80,
+        "wires": [
+          {
+            "id": "6aed9cc6993d1072"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 340,
+        "y": 80,
+        "wires": [
+          {
+            "id": "6aed9cc6993d1072",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "2889fc06149dab63",
+    "type": "subflow",
+    "name": "command TurnOff",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 80,
+        "wires": [
+          {
+            "id": "6f0a6420a6133b4c"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 340,
+        "y": 80,
+        "wires": [
+          {
+            "id": "6f0a6420a6133b4c",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "35a0e3d3e2e58940",
+    "type": "subflow",
+    "name": "exec_light",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 260,
+        "y": 120,
+        "wires": [
+          {
+            "id": "6cce008cd75c96a9"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 1140,
+        "y": 120,
+        "wires": [
+          {
+            "id": "9633d11d96bd37c9",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "9c8ca5653f3ba107",
+    "type": "subflow",
+    "name": "exec_circulator",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 40,
+        "wires": [
+          {
+            "id": "1daeaa3e1268ff28"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 620,
+        "y": 40,
+        "wires": [
+          {
+            "id": "ac1dd52d5001232b",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "a9f2e4096ebeac8b",
+    "type": "subflow",
+    "name": "exec_humidifier",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 20,
+        "y": 20,
+        "wires": [
+          {
+            "id": "f0179ff30e116131"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 980,
+        "y": 80,
+        "wires": [
+          {
+            "id": "febbcd09682c900c",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "5eb8cd15044876a2",
+    "type": "subflow",
+    "name": "exec_air_conditioner",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 100,
+        "y": 40,
+        "wires": [
+          {
+            "id": "44a74ae655d358c5"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 660,
+        "y": 40,
+        "wires": [
+          {
+            "id": "4cad18b6ad2ef53c",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "4300e9a1998d08c9",
+    "type": "subflow",
+    "name": "exec_electric_blanket",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 50,
+        "y": 30,
+        "wires": [
+          {
+            "id": "731464763e68fa55"
+          }
+        ]
+      }
+    ],
+    "out": [
+      {
+        "x": 580,
+        "y": 40,
+        "wires": [
+          {
+            "id": "8c9e3aac536318db",
+            "port": 0
+          }
+        ]
+      }
+    ],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "f4294c3dfce3976d",
+    "type": "subflow",
+    "name": "insert api resp",
+    "info": "",
+    "category": "",
+    "in": [
+      {
+        "x": 60,
+        "y": 40,
+        "wires": [
+          {
+            "id": "aabcd761b416d76e"
+          }
+        ]
+      }
+    ],
+    "out": [],
+    "env": [],
+    "meta": {},
+    "color": "#DDAA99"
+  },
+  {
+    "id": "baf616da0f104501",
+    "type": "shared-state",
+    "name": "state_seat",
+    "lbl": "state_seat",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "f33c30873b6e9cd8",
+    "type": "shared-state",
+    "name": "meter",
+    "lbl": "meter",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "ef648a19577db532",
+    "type": "shared-state",
+    "name": "contact",
+    "lbl": "contact",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "6dae47bbd3589dea",
+    "type": "shared-state",
+    "name": "motion",
+    "lbl": "motion",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "d13b5a3bfb597d9b",
+    "type": "shared-state",
+    "name": "curtain",
+    "lbl": "curtain",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "438ef2f05f6bb60d",
+    "type": "alexa-remote-account",
+    "name": "",
+    "authMethod": "proxy",
+    "proxyOwnIp": "192.168.100.1",
+    "proxyPort": "3456",
+    "cookieFile": "",
+    "refreshInterval": "1",
+    "alexaServiceHost": "alexa.amazon.co.jp",
+    "amazonPage": "amazon.com",
+    "acceptLanguage": "ja-JP",
+    "userAgent": "",
+    "useWsMqtt": "on",
+    "autoInit": "on"
+  },
+  {
+    "id": "02b3e167ff51e80e",
+    "type": "shared-state",
+    "name": "envsensor",
+    "lbl": "",
+    "tags": "",
+    "historyCount": "3",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "3000"
+  },
+  {
+    "id": "f78ed3254456ba5f",
+    "type": "shared-state",
+    "name": "state_temp",
+    "lbl": "state_temp",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "96ee3fcec49169e9",
+    "type": "shared-state",
+    "name": "state_humi",
+    "lbl": "state_humi",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "a7eadb91b4ba019c",
+    "type": "shared-state",
+    "name": "bot",
+    "lbl": "bot",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "33bc00934dcfef25",
+    "type": "shared-state",
+    "name": "state_inroom",
+    "lbl": "state_inroom",
+    "tags": "",
+    "historyCount": "5",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "1c8c55cfa1f6aed3",
+    "type": "shared-state",
+    "name": "state_maintain",
+    "lbl": "state_maintain",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "bool",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "f61daa2ac10bfd8d",
+    "type": "shared-state",
+    "name": "inroomswitch",
+    "lbl": "inroomswitch",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "1000"
+  },
+  {
+    "id": "25d825abcdde2f37",
+    "type": "shared-state",
+    "name": "state_inroomswitch",
+    "lbl": "state_inroomswitch",
+    "tags": "",
+    "historyCount": "2",
+    "dataType": "obj",
+    "boolType": "bool",
+    "boolStrTrue": "",
+    "boolStrFalse": "",
+    "precision": "",
+    "numMin": "",
+    "numMax": "",
+    "unit": "",
+    "saveInterval": "0"
+  },
+  {
+    "id": "fd8393f20308ec32",
+    "type": "mqtt-broker",
+    "name": "",
+    "broker": "localhost",
+    "port": "1883",
+    "clientid": "",
+    "autoConnect": true,
+    "usetls": false,
+    "protocolVersion": "4",
+    "keepalive": "60",
+    "cleansession": true,
+    "birthTopic": "",
+    "birthQos": "0",
+    "birthPayload": "",
+    "birthMsg": {},
+    "closeTopic": "",
+    "closeQos": "0",
+    "closePayload": "",
+    "closeMsg": {},
+    "willTopic": "",
+    "willQos": "0",
+    "willPayload": "",
+    "willMsg": {},
+    "userProps": "",
+    "sessionExpiry": ""
+  },
+  {
+    "id": "163aa9feae586618",
+    "type": "function",
+    "z": "754fa54ad709f52c",
+    "name": "genHeader",
+    "func": "var crypto = global.get(\"crypto\");\nconst token = env.get(\"SWITCHBOT_TOKEN\");\nconst secret = env.get(\"SWITCHBOT_SECRET\");\nconst t = Date.now();\nconst nonce = Math.random().toString(32).substring(2);\nconst data = token + t + nonce;\nconst signTerm = crypto.createHmac('sha256', secret)\n    .update(Buffer.from(data, 'utf-8'))\n    .digest();\nconst sign = signTerm.toString(\"base64\");\nmsg.headers = {};\nmsg.headers['content-type'] = 'application/json'\nmsg.headers['Authorization'] = token;\nmsg.headers['sign'] = sign;\nmsg.headers['nonce'] = nonce;\nmsg.headers['t'] = t;\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 290,
+    "y": 160,
+    "wires": [
+      [
+        "7406f044f8f4cb49"
+      ]
+    ]
+  },
+  {
+    "id": "7406f044f8f4cb49",
+    "type": "http request",
+    "z": "754fa54ad709f52c",
+    "name": "",
+    "method": "POST",
+    "ret": "obj",
+    "paytoqs": "ignore",
+    "url": "",
+    "tls": "",
+    "persist": false,
+    "proxy": "",
+    "insecureHTTPParser": false,
+    "authType": "",
+    "senderr": false,
+    "headers": [],
+    "x": 450,
+    "y": 160,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "a423c90673269577",
+    "type": "function",
+    "z": "754fa54ad709f52c",
+    "name": "gen url",
+    "func": "msg.url =`https://api.switch-bot.com/v1.1/devices/${msg.deviceId}/commands`\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 150,
+    "y": 160,
+    "wires": [
+      [
+        "163aa9feae586618"
+      ]
+    ]
+  },
+  {
+    "id": "6aed9cc6993d1072",
+    "type": "function",
+    "z": "4362af5847856d49",
+    "name": "payload",
+    "func": "msg.payload = {\n    \"command\": \"turnOn\",\n    \"parameter\": \"default\",\n    \"commandType\": \"command\"\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 200,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6f0a6420a6133b4c",
+    "type": "function",
+    "z": "2889fc06149dab63",
+    "name": "payload",
+    "func": "msg.payload = {\n    \"command\": \"turnOff\",\n    \"parameter\": \"default\",\n    \"commandType\": \"command\"\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 200,
+    "y": 80,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "6cce008cd75c96a9",
+    "type": "change",
+    "z": "35a0e3d3e2e58940",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "deviceId",
+        "pt": "msg",
+        "to": "01-202301222325-66415716",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 410,
+    "y": 120,
+    "wires": [
+      [
+        "9633d11d96bd37c9"
+      ]
+    ]
+  },
+  {
+    "id": "9633d11d96bd37c9",
+    "type": "subflow:754fa54ad709f52c",
+    "z": "35a0e3d3e2e58940",
+    "name": "",
+    "x": 990,
+    "y": 120,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "1daeaa3e1268ff28",
+    "type": "change",
+    "z": "9c8ca5653f3ba107",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "deviceId",
+        "pt": "msg",
+        "to": "6055F936A006",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 210,
+    "y": 40,
+    "wires": [
+      [
+        "ac1dd52d5001232b"
+      ]
+    ]
+  },
+  {
+    "id": "ac1dd52d5001232b",
+    "type": "subflow:754fa54ad709f52c",
+    "z": "9c8ca5653f3ba107",
+    "name": "",
+    "x": 450,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "f0179ff30e116131",
+    "type": "function",
+    "z": "a9f2e4096ebeac8b",
+    "name": "check bot state",
+    "func": "var bot=global.get(\"state\").bot\n\nif (msg.payload.command ==\"turnOn\" && bot.value.state == 1){\n    return msg;\n}\nif (msg.payload.command == \"turnOff\" && bot.value.state == 0) {\n    return msg;\n}",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 180,
+    "y": 20,
+    "wires": [
+      [
+        "04a401bcd667b055"
+      ]
+    ]
+  },
+  {
+    "id": "04a401bcd667b055",
+    "type": "change",
+    "z": "a9f2e4096ebeac8b",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "deviceId",
+        "pt": "msg",
+        "to": "DCA1F4ABFB08",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 430,
+    "y": 20,
+    "wires": [
+      [
+        "febbcd09682c900c"
+      ]
+    ]
+  },
+  {
+    "id": "febbcd09682c900c",
+    "type": "subflow:754fa54ad709f52c",
+    "z": "a9f2e4096ebeac8b",
+    "name": "",
+    "x": 670,
+    "y": 20,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "44a74ae655d358c5",
+    "type": "change",
+    "z": "5eb8cd15044876a2",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "deviceId",
+        "pt": "msg",
+        "to": "01-202301051500-50713420",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 270,
+    "y": 40,
+    "wires": [
+      [
+        "4cad18b6ad2ef53c"
+      ]
+    ]
+  },
+  {
+    "id": "4cad18b6ad2ef53c",
+    "type": "subflow:754fa54ad709f52c",
+    "z": "5eb8cd15044876a2",
+    "name": "",
+    "x": 490,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "731464763e68fa55",
+    "type": "change",
+    "z": "4300e9a1998d08c9",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "deviceId",
+        "pt": "msg",
+        "to": "6055F93B348E",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 170,
+    "y": 180,
+    "wires": [
+      [
+        "8c9e3aac536318db"
+      ]
+    ]
+  },
+  {
+    "id": "8c9e3aac536318db",
+    "type": "subflow:754fa54ad709f52c",
+    "z": "4300e9a1998d08c9",
+    "name": "",
+    "x": 390,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "aabcd761b416d76e",
+    "type": "function",
+    "z": "f4294c3dfce3976d",
+    "name": "parse responce",
+    "func": "var res={statusCode:msg.payload.statusCode,message:msg.payload.message}\nif(Object.keys(msg.payload.body).length!=0){\n    for(const key of Object.keys(msg.payload.body.items[0])){\n        res[key] = msg.payload.body.items[0][key];\n    }\n    for (const key of Object.keys(msg.payload.body.items[0].status)) {\n        res[key] = msg.payload.body.items[0].status[key];\n    }\n    delete res.status\n}\nmsg.payload=res\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 200,
+    "y": 40,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "bbb1c603cb03c05e",
+    "type": "mqtt in",
+    "z": "8e787ad.6aa1688",
+    "name": "",
+    "topic": "adv/+",
+    "qos": "2",
+    "datatype": "json",
+    "broker": "fd8393f20308ec32",
+    "nl": false,
+    "rap": true,
+    "rh": 0,
+    "inputs": 0,
+    "x": 70,
+    "y": 140,
+    "wires": [
+      [
+        "7bd55b3b983ba615"
+      ]
+    ]
+  },
+  {
+    "id": "7bd55b3b983ba615",
+    "type": "switch",
+    "z": "8e787ad.6aa1688",
+    "name": "filter by macaddress",
+    "property": "payload.macaddress",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "jsonata_exp",
+        "v": "(\t$macaddress:=[\"c4:d7:37:f2:cf:93\",\t\"cd:06:a5:80:4f:b5\",\t\"dc:a1:f4:ab:fb:08\",\t\"e0:2e:30:be:cb:ed\",\t\"f1:0d:3c:84:a3:43\",\t\"24:a1:60:46:b1:8a\",\t\"0c:8b:95:a8:2a:1a\"\t];\t$string($macaddress);\t$contains($string($macaddress), payload.macaddress)\t)\t",
+        "vt": "jsonata"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 1,
+    "x": 280,
+    "y": 140,
+    "wires": [
+      [
+        "922cb989ef5628a3"
+      ]
+    ]
+  },
+  {
+    "id": "922cb989ef5628a3",
+    "type": "switch",
+    "z": "8e787ad.6aa1688",
+    "name": "",
+    "property": "payload.deviceType",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "d",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "s",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "c",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "H",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "T",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "Z",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "X",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 7,
+    "x": 470,
+    "y": 140,
+    "wires": [
+      [
+        "3c5be015924e6d69"
+      ],
+      [
+        "5517a605b26e883e"
+      ],
+      [
+        "2745f79f5816e411"
+      ],
+      [
+        "96f0f6163e5cedc2"
+      ],
+      [
+        "05ece726f9fe393e"
+      ],
+      [
+        "9c6ccf8f7ee60f6e"
+      ],
+      [
+        "5756252d2dabf06b"
+      ]
+    ]
+  },
+  {
+    "id": "38f044b42c53f3c8",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "ef648a19577db532",
+    "name": "contact",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 860,
+    "y": 20,
+    "wires": []
+  },
+  {
+    "id": "e014f86c40cb3881",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "6dae47bbd3589dea",
+    "name": "motion",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 850,
+    "y": 60,
+    "wires": []
+  },
+  {
+    "id": "3e771387912c67d9",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "d13b5a3bfb597d9b",
+    "name": "curtain",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 850,
+    "y": 100,
+    "wires": []
+  },
+  {
+    "id": "6e9197854c699a98",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "a7eadb91b4ba019c",
+    "name": "bot",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 850,
+    "y": 140,
+    "wires": []
+  },
+  {
+    "id": "f8b5afc1c20584dd",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "f33c30873b6e9cd8",
+    "name": "meter",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 850,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "779762533977d41c",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "02b3e167ff51e80e",
+    "name": "envsensor",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 870,
+    "y": 220,
+    "wires": []
+  },
+  {
+    "id": "043b5d9f4b4aa78d",
+    "type": "set-shared-state",
+    "z": "8e787ad.6aa1688",
+    "state": "f61daa2ac10bfd8d",
+    "name": "inroomswitch",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 870,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "3c5be015924e6d69",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 13",
+    "func": "var obj = global.get(\"state\").contact\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 20,
+    "wires": [
+      [
+        "38f044b42c53f3c8"
+      ]
+    ]
+  },
+  {
+    "id": "5517a605b26e883e",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 14",
+    "func": "var obj = global.get(\"state\").motion\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 60,
+    "wires": [
+      [
+        "e014f86c40cb3881"
+      ]
+    ]
+  },
+  {
+    "id": "2745f79f5816e411",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 15",
+    "func": "var obj = global.get(\"state\").curtain\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 100,
+    "wires": [
+      [
+        "3e771387912c67d9"
+      ]
+    ]
+  },
+  {
+    "id": "96f0f6163e5cedc2",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 16",
+    "func": "var obj = global.get(\"state\").bot\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 140,
+    "wires": [
+      [
+        "6e9197854c699a98"
+      ]
+    ]
+  },
+  {
+    "id": "05ece726f9fe393e",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 17",
+    "func": "var obj = global.get(\"state\").meter\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 180,
+    "wires": [
+      [
+        "f8b5afc1c20584dd"
+      ]
+    ]
+  },
+  {
+    "id": "5756252d2dabf06b",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 19",
+    "func": "var obj = global.get(\"state\").inroomswitch\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 260,
+    "wires": [
+      [
+        "043b5d9f4b4aa78d"
+      ]
+    ]
+  },
+  {
+    "id": "9c6ccf8f7ee60f6e",
+    "type": "function",
+    "z": "8e787ad.6aa1688",
+    "name": "function 20",
+    "func": "var obj = global.get(\"state\").envsensor\n\nif (obj != undefined && obj.value.sensorData == msg.payload.sensorData){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 690,
+    "y": 220,
+    "wires": [
+      [
+        "779762533977d41c"
+      ]
+    ]
+  },
+  {
+    "id": "4df73c143822b3f1",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "湿度",
+    "info": "",
+    "x": 190,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "7a7390be554eaaf9",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "温度",
+    "info": "",
+    "x": 70,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "f630bfad8c969c8a",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "着席/離席",
+    "info": "",
+    "x": 80,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "c0b1e56f58ee8157",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "02b3e167ff51e80e",
+    "name": "envsensor",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 480,
+    "wires": [
+      [
+        "48d1607ea86f68e0"
+      ]
+    ]
+  },
+  {
+    "id": "48d1607ea86f68e0",
+    "type": "function",
+    "z": "cc053f9c7536a914",
+    "name": "function 6",
+    "func": "var envs=global.get(\"state\").envsensor\n\nif (envs.history.length !=3){\n    return null;\n}\nvar cnt=envs.history.filter((val)=>{return val.val.range > 500}).length\n\n// leave\nif(cnt==3){\n    msg.payload={state:\"leave\"};\n}else if(cnt==0){\n    msg.payload = { state: \"stay\" };\n}else{\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 260,
+    "y": 480,
+    "wires": [
+      [
+        "d719a0aa19c6cb81"
+      ]
+    ]
+  },
+  {
+    "id": "7c65293d34897621",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "f33c30873b6e9cd8",
+    "name": "meter",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 70,
+    "y": 280,
+    "wires": [
+      [
+        "5726f1ad87549865"
+      ]
+    ]
+  },
+  {
+    "id": "5726f1ad87549865",
+    "type": "function",
+    "z": "cc053f9c7536a914",
+    "name": "function 7",
+    "func": "var meter=global.get(\"state\").meter\n\nvar temperatureState\nif (meter.value.temperature >= 24){\n    temperatureState=\"high\";\n} else if (meter.value.temperature <= 20){\n    temperatureState=\"low\"\n}else{\n    temperatureState=\"none\"\n}\nvar humidityState\n\nif (meter.value.humidity >= 55) {\n    humidityState = \"wet\";\n} else if (meter.value.humidity <= 40) {\n    humidityState = \"dry\"\n}else{\n    humidityState=\"none\"\n}\n\nreturn [{payload:{state:temperatureState}},{payload:{state:humidityState}}];",
+    "outputs": 2,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 260,
+    "y": 280,
+    "wires": [
+      [
+        "86f0d65eafb81459",
+        "b266c294da29001c"
+      ],
+      [
+        "3c2c8d18acc6f2ea",
+        "d61f2dceabee37ce"
+      ]
+    ]
+  },
+  {
+    "id": "86f0d65eafb81459",
+    "type": "debug",
+    "z": "cc053f9c7536a914",
+    "name": "debug 14",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 500,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "3c2c8d18acc6f2ea",
+    "type": "debug",
+    "z": "cc053f9c7536a914",
+    "name": "debug 15",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 500,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "b266c294da29001c",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "f78ed3254456ba5f",
+    "name": "state_temp",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 510,
+    "y": 260,
+    "wires": []
+  },
+  {
+    "id": "d61f2dceabee37ce",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "96ee3fcec49169e9",
+    "name": "state_humi",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 510,
+    "y": 320,
+    "wires": []
+  },
+  {
+    "id": "d719a0aa19c6cb81",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "baf616da0f104501",
+    "name": "state_seat",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 510,
+    "y": 480,
+    "wires": []
+  },
+  {
+    "id": "fbae4f444b2b3d21",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "influxdb",
+    "info": "",
+    "x": 70,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "303a199fed213af8",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "f78ed3254456ba5f",
+    "name": "state_temp",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 840,
+    "wires": [
+      [
+        "8ccd3caa18ba9070"
+      ]
+    ]
+  },
+  {
+    "id": "25b0b4f06bb5c25e",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "96ee3fcec49169e9",
+    "name": "state_humi",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 900,
+    "wires": [
+      [
+        "b0ab5fbca41dfeb2"
+      ]
+    ]
+  },
+  {
+    "id": "91d076c2de65183b",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "baf616da0f104501",
+    "name": "state_seat",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 960,
+    "wires": [
+      [
+        "c7fe54a2a61af562"
+      ]
+    ]
+  },
+  {
+    "id": "0239fd187f4d97d2",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "入退室",
+    "info": "",
+    "x": 70,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "89c9e8d29054e057",
+    "type": "comment",
+    "z": "cc053f9c7536a914",
+    "name": "MEMO",
+    "info": "一般的な判定\n\n退室判定\nGooutカウントが増えたとき\n\n入室判定\nnumber of entranceが増えたとき\n\n例外\nGooutカウントが増えたがボタンも押されたときは入室判定\n（扉を開けただけ）\n上記を強制入室モードとする\n\n強制入室モードのキャンセル条件\n扉を締めたとき\n　かつ動体検知された場合\n　　入室判定\n　されていないとき\n　　退室判定\n\n退室判定で動体検知されたとき\n　入室判定とする\n\nあけっぱなしにしたあとそとから扉を締めた場合\n退室あつかいにする\n\nテストケース\n\n扉をしめて退室する\n退室になること\n扉を締めて入室する\n入室になること\n\n扉をあけっぱなしにし、ボタンを押した状態で部屋に戻る\n強制入室になること\nその状態で内側からしめる\n入室になること\nその状態で外側からしめる\n退室になること\n\n扉をあけっぱなしにして部屋を出る\n退室モードになること\nその状態で部屋に戻って扉を閉める\n入室モードになること\n",
+    "x": 190,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "59be1724b0442e26",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "ef648a19577db532",
+    "name": "contact",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 70,
+    "y": 80,
+    "wires": [
+      [
+        "95f1c51505eee478",
+        "21a32bcd7e63ede1"
+      ]
+    ]
+  },
+  {
+    "id": "95f1c51505eee478",
+    "type": "function",
+    "z": "cc053f9c7536a914",
+    "name": "function 11",
+    "func": "var contact=global.get(\"state\").contact;\nvar state_inroom=global.get(\"state\").state_inroom;\n\nif(isGoOut(contact.value.goOutCount,contact.prev.goOutCount)){\n    if (pushed(contact.value.buttonPushCount, contact.prev.buttonPushCount)){\n        return { payload: { state: \"entrance\" } };\n    }\n    return {payload:{state:\"goOut\"}};\n}\nif(isEntrance(contact.value.entranceCount,contact.prev.entranceCount)){\n    if (pushed(contact.value.buttonPushCount, contact.prev.buttonPushCount)) {\n        return { payload: { state: \"goOut\" } };\n    }\n    return { payload: { state: \"entrance\" } };\n}\nif (pushed(contact.value.buttonPushCount, contact.prev.buttonPushCount)) {\n    if (state_inroom.value.state==\"entrance\"){\n        return { payload: { state: \"goOut\" } };\n    }\n    return { payload: { state: \"entrance\" } };\n}\n\nfunction isGoOut(now,prev){\n    if(now>prev){\n        return true\n    }\n    if(now==1 && prev==3){\n        return true\n    }\n    false\n}\nfunction isEntrance(now, prev) {\n    if (now > prev) {\n        return true\n    }\n    if (now == 1 && prev == 3) {\n        return true\n    }\n    false\n}\n\nfunction pushed(now,prev){\n    if(now!=prev){\n        return true\n    }\n}\n\nreturn ;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 270,
+    "y": 80,
+    "wires": [
+      [
+        "364507e383bc8c08",
+        "aaf5b129e59baab0"
+      ]
+    ]
+  },
+  {
+    "id": "364507e383bc8c08",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "33bc00934dcfef25",
+    "name": "state_inroom",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 510,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "aaf5b129e59baab0",
+    "type": "debug",
+    "z": "cc053f9c7536a914",
+    "name": "debug 17",
+    "active": true,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 500,
+    "y": 20,
+    "wires": []
+  },
+  {
+    "id": "c6c52bd11be41813",
+    "type": "inject",
+    "z": "cc053f9c7536a914",
+    "name": "set entrance",
+    "props": [
+      {
+        "p": "payload.state",
+        "v": "entrance",
+        "vt": "str"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "x": 270,
+    "y": 140,
+    "wires": [
+      [
+        "364507e383bc8c08"
+      ]
+    ]
+  },
+  {
+    "id": "9c843a73ee467af4",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "33bc00934dcfef25",
+    "name": "state_inroom",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 90,
+    "y": 780,
+    "wires": [
+      [
+        "2e066be1456547e0"
+      ]
+    ]
+  },
+  {
+    "id": "daa430a124ebce51",
+    "type": "inject",
+    "z": "cc053f9c7536a914",
+    "name": "メンテナンスモードON",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "true",
+    "payloadType": "bool",
+    "x": 140,
+    "y": 600,
+    "wires": [
+      [
+        "63dcc946cf50a575"
+      ]
+    ]
+  },
+  {
+    "id": "8fc57f94dfd00193",
+    "type": "inject",
+    "z": "cc053f9c7536a914",
+    "name": "メンテナンスモードOFF",
+    "props": [
+      {
+        "p": "payload"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "false",
+    "payloadType": "bool",
+    "x": 150,
+    "y": 660,
+    "wires": [
+      [
+        "63dcc946cf50a575"
+      ]
+    ]
+  },
+  {
+    "id": "63dcc946cf50a575",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "1c8c55cfa1f6aed3",
+    "name": "state_maintain",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 520,
+    "y": 620,
+    "wires": []
+  },
+  {
+    "id": "d15cbbce6f688052",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "f61daa2ac10bfd8d",
+    "name": "inroomswitch",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 70,
+    "y": 560,
+    "wires": [
+      [
+        "b6535fceac185d86"
+      ]
+    ]
+  },
+  {
+    "id": "b6535fceac185d86",
+    "type": "function",
+    "z": "cc053f9c7536a914",
+    "name": "function 12",
+    "func": "var inroomswitch = global.get(\"state\").inroomswitch;\n\nif (pushed(inroomswitch.value.pushCount, inroomswitch.prev.pushCount)) {\n    return { payload: { state: \"change\",at: new Date() } };\n}\n\n\n\nfunction pushed(now, prev) {\n    if (now != prev) {\n        return true\n    }\n}\n\nreturn;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 270,
+    "y": 560,
+    "wires": [
+      [
+        "9f3fc18864a46c4e",
+        "6d07ed1f3be7fb9b"
+      ]
+    ]
+  },
+  {
+    "id": "9f3fc18864a46c4e",
+    "type": "set-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "25d825abcdde2f37",
+    "name": "state_inroomswitch",
+    "triggerOnInit": true,
+    "triggerOnChange": true,
+    "provideOutput": false,
+    "outputs": 0,
+    "x": 530,
+    "y": 560,
+    "wires": []
+  },
+  {
+    "id": "6d07ed1f3be7fb9b",
+    "type": "debug",
+    "z": "cc053f9c7536a914",
+    "name": "debug 18",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "false",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 800,
+    "y": 440,
+    "wires": []
+  },
+  {
+    "id": "21a32bcd7e63ede1",
+    "type": "debug",
+    "z": "cc053f9c7536a914",
+    "name": "debug 19",
+    "active": false,
+    "tosidebar": true,
+    "console": false,
+    "tostatus": false,
+    "complete": "payload",
+    "targetType": "msg",
+    "statusVal": "",
+    "statusType": "auto",
+    "x": 240,
+    "y": 180,
+    "wires": []
+  },
+  {
+    "id": "3da01c330530f68e",
+    "type": "get-shared-state",
+    "z": "cc053f9c7536a914",
+    "state": "25d825abcdde2f37",
+    "name": "state_inroomswitch",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 110,
+    "y": 1020,
+    "wires": [
+      [
+        "7095a56d43c6307b"
+      ]
+    ]
+  },
+  {
+    "id": "2e066be1456547e0",
+    "type": "mqtt out",
+    "z": "cc053f9c7536a914",
+    "name": "",
+    "topic": "state/state_inroom",
+    "qos": "0",
+    "retain": "true",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "fd8393f20308ec32",
+    "x": 390,
+    "y": 780,
+    "wires": []
+  },
+  {
+    "id": "8ccd3caa18ba9070",
+    "type": "mqtt out",
+    "z": "cc053f9c7536a914",
+    "name": "",
+    "topic": "state/state_temp",
+    "qos": "",
+    "retain": "",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "fd8393f20308ec32",
+    "x": 380,
+    "y": 840,
+    "wires": []
+  },
+  {
+    "id": "b0ab5fbca41dfeb2",
+    "type": "mqtt out",
+    "z": "cc053f9c7536a914",
+    "name": "",
+    "topic": "state/state_humi",
+    "qos": "",
+    "retain": "",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "fd8393f20308ec32",
+    "x": 380,
+    "y": 900,
+    "wires": []
+  },
+  {
+    "id": "c7fe54a2a61af562",
+    "type": "mqtt out",
+    "z": "cc053f9c7536a914",
+    "name": "",
+    "topic": "state/state_seat",
+    "qos": "",
+    "retain": "",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "fd8393f20308ec32",
+    "x": 380,
+    "y": 960,
+    "wires": []
+  },
+  {
+    "id": "7095a56d43c6307b",
+    "type": "mqtt out",
+    "z": "cc053f9c7536a914",
+    "name": "",
+    "topic": "state/state_inroomswitch",
+    "qos": "",
+    "retain": "",
+    "respTopic": "",
+    "contentType": "",
+    "userProps": "",
+    "correl": "",
+    "expiry": "",
+    "broker": "fd8393f20308ec32",
+    "x": 410,
+    "y": 1020,
+    "wires": []
+  },
+  {
+    "id": "cd84dd7bcac15144",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "加湿器ON/OFF",
+    "info": "",
+    "x": 100,
+    "y": 1360,
+    "wires": []
+  },
+  {
+    "id": "4284eb7151033d27",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "エアコンON/OFF",
+    "info": "",
+    "x": 100,
+    "y": 1060,
+    "wires": []
+  },
+  {
+    "id": "290d92c69a908ace",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "ライトON",
+    "info": "",
+    "x": 1160,
+    "y": 40,
+    "wires": []
+  },
+  {
+    "id": "c8cef9363a37ef39",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "退室時",
+    "info": "",
+    "x": 670,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "3d9f2f95a27ad05c",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "着席/離席時",
+    "info": "",
+    "x": 90,
+    "y": 820,
+    "wires": []
+  },
+  {
+    "id": "c8504db689830d92",
+    "type": "get-shared-state",
+    "z": "6869029d85cf6172",
+    "state": "33bc00934dcfef25",
+    "name": "state_inroom",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 90,
+    "y": 60,
+    "wires": [
+      [
+        "342a86bef2a2813a"
+      ]
+    ]
+  },
+  {
+    "id": "e2f397d68345ef8e",
+    "type": "alexa-remote-routine",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "account": "438ef2f05f6bb60d",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "入室しました"
+        },
+        "devices": [
+          "G090XG1223340EF9"
+        ]
+      }
+    },
+    "x": 640,
+    "y": 100,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "459b596d93d3b7c1",
+    "type": "switch",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "entrance",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "goOut",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 410,
+    "y": 60,
+    "wires": [
+      [
+        "e2f397d68345ef8e",
+        "02c707e087c11d05"
+      ],
+      [
+        "3abf6eaaffdb650f",
+        "2bb7bfe87df9bc70"
+      ]
+    ]
+  },
+  {
+    "id": "3abf6eaaffdb650f",
+    "type": "alexa-remote-routine",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "account": "438ef2f05f6bb60d",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "退室しました"
+        },
+        "devices": [
+          "G090XG1223340EF9"
+        ]
+      }
+    },
+    "x": 560,
+    "y": 180,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "8849d4aea3ba9822",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "入室時",
+    "info": "",
+    "x": 570,
+    "y": 20,
+    "wires": []
+  },
+  {
+    "id": "14340decc93bf083",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "ライトOFF",
+    "info": "",
+    "x": 1160,
+    "y": 380,
+    "wires": []
+  },
+  {
+    "id": "343c20f17fec0f44",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "エアコンOFF",
+    "info": "",
+    "x": 1170,
+    "y": 540,
+    "wires": []
+  },
+  {
+    "id": "3d9b66924852222b",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "サーキュレータOFF",
+    "info": "",
+    "x": 1190,
+    "y": 460,
+    "wires": []
+  },
+  {
+    "id": "b0ec3858a5b52281",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "暖房OFF",
+    "info": "",
+    "x": 560,
+    "y": 900,
+    "wires": []
+  },
+  {
+    "id": "a3fe3b90daa41fdc",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "サーキュレータON",
+    "info": "",
+    "x": 1190,
+    "y": 120,
+    "wires": []
+  },
+  {
+    "id": "24044861ebbc6dd2",
+    "type": "delay",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "1",
+    "timeoutUnits": "minutes",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 900,
+    "y": 440,
+    "wires": [
+      [
+        "d58c389f32f4f940"
+      ]
+    ]
+  },
+  {
+    "id": "d58c389f32f4f940",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "recheck state",
+    "func": "var state_inroom=global.get(\"state\").state_inroom\n\nif (msg.payload.state != state_inroom.value.state){\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 910,
+    "y": 500,
+    "wires": [
+      [
+        "c115640eb13e4a1a"
+      ]
+    ]
+  },
+  {
+    "id": "d1ceb6d48652def2",
+    "type": "get-shared-state",
+    "z": "6869029d85cf6172",
+    "state": "baf616da0f104501",
+    "name": "state_seat",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 880,
+    "wires": [
+      [
+        "9adf29fb562673ef"
+      ]
+    ]
+  },
+  {
+    "id": "effcb0d642bf9a0a",
+    "type": "switch",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "stay",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "leave",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 390,
+    "y": 880,
+    "wires": [
+      [
+        "5936e09ac2326201",
+        "33e3baa08368abbb"
+      ],
+      [
+        "c3e76d30e6dfc108",
+        "a0274eaa0014491f"
+      ]
+    ]
+  },
+  {
+    "id": "0342ccae12216043",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "暖房ON",
+    "info": "",
+    "x": 550,
+    "y": 760,
+    "wires": []
+  },
+  {
+    "id": "5936e09ac2326201",
+    "type": "alexa-remote-routine",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "account": "438ef2f05f6bb60d",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "着席しました"
+        },
+        "devices": [
+          "G090XG1223340EF9"
+        ]
+      }
+    },
+    "x": 580,
+    "y": 800,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "c3e76d30e6dfc108",
+    "type": "alexa-remote-routine",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "account": "438ef2f05f6bb60d",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "離席しました"
+        },
+        "devices": [
+          "G090XG1223340EF9"
+        ]
+      }
+    },
+    "x": 580,
+    "y": 1000,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "4f3c4e0d7f560430",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "入退室時",
+    "info": "",
+    "x": 80,
+    "y": 20,
+    "wires": []
+  },
+  {
+    "id": "d795e82610a1b1b7",
+    "type": "get-shared-state",
+    "z": "6869029d85cf6172",
+    "state": "f78ed3254456ba5f",
+    "name": "state_temp",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 1100,
+    "wires": [
+      [
+        "226177e284b2dc5f"
+      ]
+    ]
+  },
+  {
+    "id": "d6feb2275f55da36",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "chech inroom",
+    "func": "var state_inroom=global.get(\"state\").state_inroom\n\nif (state_inroom.value.state == \"goOut\"){\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 1160,
+    "wires": [
+      [
+        "6ecb806deada39fe"
+      ]
+    ]
+  },
+  {
+    "id": "6ecb806deada39fe",
+    "type": "switch",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "low",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "high",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 450,
+    "y": 1160,
+    "wires": [
+      [
+        "deac51d2d0e28157"
+      ],
+      [
+        "85035ee38c557581"
+      ]
+    ]
+  },
+  {
+    "id": "1c37d661b1ceeaa9",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "エアコンON",
+    "info": "",
+    "x": 630,
+    "y": 1080,
+    "wires": []
+  },
+  {
+    "id": "d0ec29a659679151",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "エアコンOFF",
+    "info": "",
+    "x": 630,
+    "y": 1220,
+    "wires": []
+  },
+  {
+    "id": "ce35f3c66cbf51c3",
+    "type": "get-shared-state",
+    "z": "6869029d85cf6172",
+    "state": "96ee3fcec49169e9",
+    "name": "state_humi",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 80,
+    "y": 1420,
+    "wires": [
+      [
+        "9121cef173084fd1"
+      ]
+    ]
+  },
+  {
+    "id": "761aec501201fb36",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "chech inroom",
+    "func": "var state_inroom=global.get(\"state\").state_inroom\n\nif (state_inroom.value.state == \"goOut\"){\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 420,
+    "y": 1420,
+    "wires": [
+      [
+        "ae2f034bc3bcdce2"
+      ]
+    ]
+  },
+  {
+    "id": "a524336b4ab8a927",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "加湿器OFF",
+    "info": "",
+    "x": 720,
+    "y": 1420,
+    "wires": []
+  },
+  {
+    "id": "ae2f034bc3bcdce2",
+    "type": "switch",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "property": "payload.state",
+    "propertyType": "msg",
+    "rules": [
+      {
+        "t": "eq",
+        "v": "dry",
+        "vt": "str"
+      },
+      {
+        "t": "eq",
+        "v": "wet",
+        "vt": "str"
+      }
+    ],
+    "checkall": "true",
+    "repair": false,
+    "outputs": 2,
+    "x": 570,
+    "y": 1420,
+    "wires": [
+      [],
+      [
+        "ef26b972ecc535a3"
+      ]
+    ]
+  },
+  {
+    "id": "19d46402e6e06b3c",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "エアコンON",
+    "info": "",
+    "x": 1170,
+    "y": 200,
+    "wires": []
+  },
+  {
+    "id": "c6b3703588460159",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check temp",
+    "func": "var state_temp=global.get(\"state\").state_temp\n\nif (state_temp.value.state != \"low\"){\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 770,
+    "y": 240,
+    "wires": [
+      [
+        "a76b3173993a40b2"
+      ]
+    ]
+  },
+  {
+    "id": "deac51d2d0e28157",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "hour check",
+    "func": "var h=(new Date()).getHours()\nif (h>2 && h<8){\n    return;\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 630,
+    "y": 1120,
+    "wires": [
+      [
+        "95c17b69861f2b83"
+      ]
+    ]
+  },
+  {
+    "id": "342a86bef2a2813a",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check maintain",
+    "func": "var state_maintain=global.get(\"state\").state_maintain;\n\nif(state_maintain && state_maintain.value == true){\n    return\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 260,
+    "y": 60,
+    "wires": [
+      [
+        "459b596d93d3b7c1"
+      ]
+    ]
+  },
+  {
+    "id": "9adf29fb562673ef",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check maintain",
+    "func": "var state_maintain=global.get(\"state\").state_maintain;\n\nif(state_maintain && state_maintain.value == true){\n    return\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 880,
+    "wires": [
+      [
+        "effcb0d642bf9a0a"
+      ]
+    ]
+  },
+  {
+    "id": "226177e284b2dc5f",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check maintain",
+    "func": "var state_maintain=global.get(\"state\").state_maintain;\nif(state_maintain && state_maintain.value == true){\n    return\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 1100,
+    "wires": [
+      [
+        "d6feb2275f55da36"
+      ]
+    ]
+  },
+  {
+    "id": "9121cef173084fd1",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check maintain",
+    "func": "var state_maintain=global.get(\"state\").state_maintain;\nif(state_maintain && state_maintain.value == true){\n    return\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 240,
+    "y": 1420,
+    "wires": [
+      [
+        "761aec501201fb36"
+      ]
+    ]
+  },
+  {
+    "id": "33e3baa08368abbb",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "check entrance",
+    "func": "var state_inroom=global.get(\"state\").state_inroom;\n\nif (state_inroom && state_inroom.value.state == \"goOut\"){\n    return\n}\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 580,
+    "y": 860,
+    "wires": [
+      [
+        "7543a5cf71c24ed7"
+      ]
+    ]
+  },
+  {
+    "id": "98d1271e9f915d3b",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "暖房OFF",
+    "info": "",
+    "x": 1160,
+    "y": 700,
+    "wires": []
+  },
+  {
+    "id": "ef26b972ecc535a3",
+    "type": "subflow:2889fc06149dab63",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 750,
+    "y": 1460,
+    "wires": [
+      [
+        "f91e96e8ceb3d508"
+      ]
+    ]
+  },
+  {
+    "id": "7543a5cf71c24ed7",
+    "type": "subflow:4362af5847856d49",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 770,
+    "y": 860,
+    "wires": [
+      [
+        "768166070a14b892"
+      ]
+    ]
+  },
+  {
+    "id": "a0274eaa0014491f",
+    "type": "subflow:2889fc06149dab63",
+    "z": "6869029d85cf6172",
+    "x": 590,
+    "y": 940,
+    "wires": [
+      [
+        "768166070a14b892"
+      ]
+    ]
+  },
+  {
+    "id": "95c17b69861f2b83",
+    "type": "subflow:4362af5847856d49",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 810,
+    "y": 1120,
+    "wires": [
+      [
+        "29e5ca1f30fae9db"
+      ]
+    ]
+  },
+  {
+    "id": "85035ee38c557581",
+    "type": "subflow:2889fc06149dab63",
+    "z": "6869029d85cf6172",
+    "x": 650,
+    "y": 1260,
+    "wires": [
+      [
+        "29e5ca1f30fae9db"
+      ]
+    ]
+  },
+  {
+    "id": "c115640eb13e4a1a",
+    "type": "subflow:2889fc06149dab63",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 930,
+    "y": 580,
+    "wires": [
+      [
+        "c625153f6aeb9528",
+        "f318bbcc04fb21b2",
+        "3e918ccd932c7977",
+        "7cb43d42c1d86e49"
+      ]
+    ]
+  },
+  {
+    "id": "f318bbcc04fb21b2",
+    "type": "subflow:35a0e3d3e2e58940",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1160,
+    "y": 420,
+    "wires": [
+      [
+        "ed2c7f60f99cb5ef"
+      ]
+    ]
+  },
+  {
+    "id": "3e918ccd932c7977",
+    "type": "subflow:9c8ca5653f3ba107",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1180,
+    "y": 500,
+    "wires": [
+      [
+        "0c1d233366221ade"
+      ]
+    ]
+  },
+  {
+    "id": "7cb43d42c1d86e49",
+    "type": "subflow:5eb8cd15044876a2",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1190,
+    "y": 580,
+    "wires": [
+      [
+        "88b86efe454ba2e7"
+      ]
+    ]
+  },
+  {
+    "id": "c625153f6aeb9528",
+    "type": "subflow:4300e9a1998d08c9",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1200,
+    "y": 740,
+    "wires": [
+      [
+        "0879d372371c45c1"
+      ]
+    ]
+  },
+  {
+    "id": "02c707e087c11d05",
+    "type": "subflow:4362af5847856d49",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 650,
+    "y": 60,
+    "wires": [
+      [
+        "da6757b7dd10b235",
+        "fd878aa1a2167957",
+        "c6b3703588460159"
+      ]
+    ]
+  },
+  {
+    "id": "da6757b7dd10b235",
+    "type": "subflow:35a0e3d3e2e58940",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1160,
+    "y": 80,
+    "wires": [
+      [
+        "e5e79377263e6cac"
+      ]
+    ]
+  },
+  {
+    "id": "fd878aa1a2167957",
+    "type": "subflow:9c8ca5653f3ba107",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1180,
+    "y": 160,
+    "wires": [
+      [
+        "f972b904c51a2ebc"
+      ]
+    ]
+  },
+  {
+    "id": "a76b3173993a40b2",
+    "type": "subflow:4362af5847856d49",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 950,
+    "y": 240,
+    "wires": [
+      [
+        "0cbeba42dd049cc6"
+      ]
+    ]
+  },
+  {
+    "id": "0cbeba42dd049cc6",
+    "type": "subflow:5eb8cd15044876a2",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1190,
+    "y": 240,
+    "wires": [
+      [
+        "277fc3e16a4f1536"
+      ]
+    ]
+  },
+  {
+    "id": "768166070a14b892",
+    "type": "subflow:4300e9a1998d08c9",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1200,
+    "y": 860,
+    "wires": [
+      [
+        "155b7759a796e43b"
+      ]
+    ]
+  },
+  {
+    "id": "29e5ca1f30fae9db",
+    "type": "subflow:5eb8cd15044876a2",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1200,
+    "y": 1120,
+    "wires": [
+      [
+        "2213ab9b65dfdcec"
+      ]
+    ]
+  },
+  {
+    "id": "f91e96e8ceb3d508",
+    "type": "subflow:a9f2e4096ebeac8b",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1180,
+    "y": 1460,
+    "wires": [
+      [
+        "b30dac5d864f62a5"
+      ]
+    ]
+  },
+  {
+    "id": "c5e667f80e66ea9d",
+    "type": "inject",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 880,
+    "y": 20,
+    "wires": [
+      [
+        "02c707e087c11d05"
+      ]
+    ]
+  },
+  {
+    "id": "e5e79377263e6cac",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_light",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 80,
+    "wires": [
+      [
+        "7b976d2e0b90de9b"
+      ]
+    ]
+  },
+  {
+    "id": "7b976d2e0b90de9b",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 80,
+    "wires": []
+  },
+  {
+    "id": "ed2c7f60f99cb5ef",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_light",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 420,
+    "wires": [
+      [
+        "0fbc17411edabd64"
+      ]
+    ]
+  },
+  {
+    "id": "0fbc17411edabd64",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 420,
+    "wires": []
+  },
+  {
+    "id": "f972b904c51a2ebc",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_circulator",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 160,
+    "wires": [
+      [
+        "b5b6e0e43f4281c8"
+      ]
+    ]
+  },
+  {
+    "id": "b5b6e0e43f4281c8",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 160,
+    "wires": []
+  },
+  {
+    "id": "0c1d233366221ade",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_circulator",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 500,
+    "wires": [
+      [
+        "4b16c9395cf78111"
+      ]
+    ]
+  },
+  {
+    "id": "4b16c9395cf78111",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 500,
+    "wires": []
+  },
+  {
+    "id": "277fc3e16a4f1536",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_air_conditioner",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 240,
+    "wires": [
+      [
+        "35ae414649b1c2c9"
+      ]
+    ]
+  },
+  {
+    "id": "35ae414649b1c2c9",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 240,
+    "wires": []
+  },
+  {
+    "id": "88b86efe454ba2e7",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_air_conditioner",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 580,
+    "wires": [
+      [
+        "47c321f70fc0c379"
+      ]
+    ]
+  },
+  {
+    "id": "47c321f70fc0c379",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 580,
+    "wires": []
+  },
+  {
+    "id": "0879d372371c45c1",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_electric_blanket",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 740,
+    "wires": [
+      [
+        "30eb8e448262af39"
+      ]
+    ]
+  },
+  {
+    "id": "30eb8e448262af39",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 740,
+    "wires": []
+  },
+  {
+    "id": "155b7759a796e43b",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_electric_blanket",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 860,
+    "wires": [
+      [
+        "7f151decab330158"
+      ]
+    ]
+  },
+  {
+    "id": "7f151decab330158",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 860,
+    "wires": []
+  },
+  {
+    "id": "2213ab9b65dfdcec",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_air_conditioner",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 1120,
+    "wires": [
+      [
+        "322ddf191d83aa00"
+      ]
+    ]
+  },
+  {
+    "id": "322ddf191d83aa00",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1690,
+    "y": 1120,
+    "wires": []
+  },
+  {
+    "id": "b30dac5d864f62a5",
+    "type": "change",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "rules": [
+      {
+        "t": "set",
+        "p": "measurement",
+        "pt": "msg",
+        "to": "api_humidifier",
+        "tot": "str"
+      }
+    ],
+    "action": "",
+    "property": "",
+    "from": "",
+    "to": "",
+    "reg": false,
+    "x": 1480,
+    "y": 1460,
+    "wires": [
+      [
+        "5551e1e4282074c3"
+      ]
+    ]
+  },
+  {
+    "id": "5551e1e4282074c3",
+    "type": "subflow:f4294c3dfce3976d",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "x": 1680,
+    "y": 1460,
+    "wires": []
+  },
+  {
+    "id": "2bb7bfe87df9bc70",
+    "type": "delay",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "pauseType": "delay",
+    "timeout": "4",
+    "timeoutUnits": "minutes",
+    "rate": "1",
+    "nbRateUnits": "1",
+    "rateUnits": "second",
+    "randomFirst": "1",
+    "randomLast": "5",
+    "randomUnits": "seconds",
+    "drop": false,
+    "allowrate": false,
+    "outputs": 1,
+    "x": 700,
+    "y": 440,
+    "wires": [
+      [
+        "24044861ebbc6dd2",
+        "1034aa835c8aaa3f"
+      ]
+    ]
+  },
+  {
+    "id": "1034aa835c8aaa3f",
+    "type": "function",
+    "z": "6869029d85cf6172",
+    "name": "recheck state",
+    "func": "var state_inroom=global.get(\"state\").state_inroom\n\nif (msg.payload.state != state_inroom.value.state){\n    return\n}\n\nreturn msg;",
+    "outputs": 1,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 710,
+    "y": 500,
+    "wires": [
+      [
+        "e180060a84169683"
+      ]
+    ]
+  },
+  {
+    "id": "e180060a84169683",
+    "type": "alexa-remote-routine",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "account": "438ef2f05f6bb60d",
+    "routineNode": {
+      "type": "speak",
+      "payload": {
+        "type": "regular",
+        "text": {
+          "type": "str",
+          "value": "消灯します"
+        },
+        "devices": [
+          "G090XG1223340EF9"
+        ]
+      }
+    },
+    "x": 720,
+    "y": 580,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "d5e2abb3049e63b3",
+    "type": "get-shared-state",
+    "z": "6869029d85cf6172",
+    "state": "25d825abcdde2f37",
+    "name": "state_inroomswitch",
+    "triggerOnInit": false,
+    "triggerOnChange": true,
+    "x": 130,
+    "y": 720,
+    "wires": [
+      []
+    ]
+  },
+  {
+    "id": "11ef53cb7116c259",
+    "type": "comment",
+    "z": "6869029d85cf6172",
+    "name": "入退室ステータスボタン押下時",
+    "info": "",
+    "x": 170,
+    "y": 640,
+    "wires": []
+  },
+  {
+    "id": "d25feed1cc419232",
+    "type": "inject",
+    "z": "6869029d85cf6172",
+    "name": "",
+    "props": [
+      {
+        "p": "payload"
+      },
+      {
+        "p": "topic",
+        "vt": "str"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": false,
+    "onceDelay": 0.1,
+    "topic": "",
+    "payload": "",
+    "payloadType": "date",
+    "x": 900,
+    "y": 380,
+    "wires": [
+      [
+        "c115640eb13e4a1a"
+      ]
+    ]
+  }
+]
